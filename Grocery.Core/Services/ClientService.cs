@@ -22,6 +22,11 @@ namespace Grocery.Core.Services
             return _clientRepository.Get(email);
         }
 
+        public void Add(Client client)
+        {
+            _clientRepository.Add(client);
+        }
+
         public Client? Get(int id)
         {
             return _clientRepository.Get(id);

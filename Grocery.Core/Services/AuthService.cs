@@ -18,5 +18,21 @@ namespace Grocery.Core.Services
             if (PasswordHelper.VerifyPassword(password, client.Password)) return client;
             return null;
         }
+
+        public Client? Register(string name, string email, string password)
+        {
+            // Cheks if client already exists
+            var existingClient = _clientService.Get(email);
+            if (existingClient != null) return null;
+
+            // Hashes the password
+            var passwordHash = PasswordHelper.HashPassword(password);
+
+            // Creates a new account
+            var client = new Client(0, name, email, passwordHash);
+            _clientService.Add(client);
+
+            return client;
+        }
     }
 }

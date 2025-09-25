@@ -33,5 +33,30 @@ namespace Grocery.Core.Data.Repositories
         {
             return clientList;
         }
+
+        public void Add(Client client)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+
+            for (int i = 0; i < clientList.Count; i++)
+            {
+                var c = clientList[i];
+                if (!string.IsNullOrEmpty(c.EmailAddress) && !string.IsNullOrEmpty(client.EmailAddress) && 
+                    string.Equals(c.EmailAddress, client.EmailAddress,StringComparison.OrdinalIgnoreCase))
+                {
+                    return;
+                }
+            }
+
+            var maxId = 0;
+            for (int i = 0; i < clientList.Count; i++)
+                if (clientList[i].Id > maxId) maxId = clientList[i].Id;
+
+            client.Id = maxId + 1;
+
+            clientList.Add(client);
+
+        }
+
     }
 }
