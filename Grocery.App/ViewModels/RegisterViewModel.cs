@@ -39,7 +39,7 @@ public partial class RegisterViewModel : BaseViewModel
 
         var client = _authService.Register(name, email, password);
         
-        if (client == null)
+        if (client != null)
         {
             await Application.Current.MainPage.DisplayAlert("Mislukt", "E-mailadres bestaat al.", "OK");
             return;

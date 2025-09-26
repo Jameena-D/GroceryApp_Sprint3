@@ -10,6 +10,6 @@
         <Entry Placeholder="Herhaal wachtwoord" IsPassword="True" Text="{Binding ConfirmPassword}" />
 
         <Button Text="Registreren"
-                Clicked="OnBackToLoginClicked"/>
+                Clicked="OnBackToLoginClicked" />
     </VerticalStackLayout>
 </ContentPage>
