@@ -1,4 +1,5 @@
 using Grocery.Core.Helpers;
+using NUnit.Framework;
 
 namespace TestCore
 {
@@ -26,19 +27,23 @@ namespace TestCore
             Assert.IsTrue(PasswordHelper.VerifyPassword(password, passwordHash));
         }
 
-
         //Unhappy flow
         [Test]
         public void TestPasswordHelperReturnsFalse()
         {
-            Assert.Pass(); //Zelf uitwerken
+            string wrongPassword = "foutwachtwoord";
+            string passwordHash = "sxnIcZdYt8wC8MYWcQVQjQ==.FKd5Z/jwxPv3a63lX+uvQ0+P7EuNYZybvkmdhbnkIHA=";
+            Assert.IsFalse(PasswordHelper.VerifyPassword(wrongPassword, passwordHash));
+
+            string validPassword = "user3";
+            string invalidHash = "invalidhash";
+            Assert.IsFalse(PasswordHelper.VerifyPassword(validPassword, invalidHash));
         }
 
-        [TestCase("user1", "IunRhDKa+fWo8+4/Qfj7Pg==.kDxZnUQHCZun6gLIE6d9oeULLRIuRmxmH2QKJv2IM08")]
-        [TestCase("user3", "sxnIcZdYt8wC8MYWcQVQjQ==.FKd5Z/jwxPv3a63lX+uvQ0+P7EuNYZybvkmdhbnkIHA")]
+        [TestCase("foutwachtwoord", "invalidhash")]
         public void TestPasswordHelperReturnsFalse(string password, string passwordHash)
         {
-            Assert.Fail(); //Zelf uitwerken zodat de test slaagt!
+            Assert.IsFalse(PasswordHelper.VerifyPassword(password, passwordHash));
         }
     }
 }
