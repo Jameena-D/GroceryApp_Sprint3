@@ -27,7 +27,7 @@ public partial class RegisterViewModel : BaseViewModel
             string.IsNullOrWhiteSpace(email) ||
             string.IsNullOrWhiteSpace(password))
         {
-            await Application.Current.MainPage.DisplayAlert("Fout", "Vull alee velden in.", "OK");
+            await Application.Current.MainPage.DisplayAlert("Fout", "Vul alle velden in.", "OK");
             return;
         }
 

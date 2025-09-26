@@ -3,15 +3,18 @@
 ## UC07 Delen boodschappenlijst  
 Is compleet  
   
-## UC08 Zoeken producten  
-Aanvullen:
-- In de GroceryListItemsView zitten twee Collection Views, namelijk één voor de inhoud van de boodschappenlijst en één voor producten die je toe kunt voegen aan de boodschappenlijst  
-- Voeg boven de tweede CollectionView een zoekveld (SearchBar) in om op producten te kunnen zoeken.  
-- Zorg dat de SearchCommand wordt gebonden aan een functie in het onderliggende ViewModel (GroceryListItemsViewModel) en dat de zoekterm die in het zoekveld is ingetypt gebruikt wordt als parameter (SearchCommandParameter).  
-- Werk in het viewModel (GroceryListItemsViewModel) de zoekfunctie uit en zorg dat de beschikbare producten worden gefilterd op de zoekterm!  
+## UC08 Zoeken producten 
+Is compleet
+- Er zit nu een zoekbalk als je een grocerylist opent.
+- Je kan alleen producten opzoeken als je dat niet al op je lijst hebt staan.
 
-## UCx Registratie gebruiker 
-Of een ander idee zelf uitwerken. Dit betekent ook dat de documentatie hiervoor ontwikkeld moet worden.
+## UC09 Registratie gebruiker 
+Is compleet
+- Zit een registratie knop in de login view die naar een registratie view navigeert.
+- In de registratie view kan een nieuwe gebruiker worden geregistreerd met een gebruikersnaam, email en wachtwoord.
+- Bij succesvolle registratie wordt de gebruiker terug genavigeerd naar de login view.
+- Er kan nu worden ingelogd met de niewe gebruiker.
+- App geeft een foutmelding als de registratie mislukt (bijvoorbeeld omdat de email al in gebruik is).
 
   
 
