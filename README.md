@@ -16,5 +16,16 @@ Is compleet
 - Er kan nu worden ingelogd met de niewe gebruiker.
 - App geeft een foutmelding als de registratie mislukt (bijvoorbeeld omdat de email al in gebruik is).
 
+- ## Gitflow
+
+Ik heb de gitflow methode gebruikt voor het werken met git.
+
+- ## Branches 
+- main: bevat de laatste stabiele versie van de app.
+- develop: bevat de laatste ontwikkelversie van de app.
+- feature/uc(numer & naam): bevat de code voor een nieuwe feature.
+- feature branches worden na aforonding terug gemerged naar develop en worden verwijderd
+- hotfix/naam): bevat de code voor een bugfix.
+
   
 
